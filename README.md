@@ -2,6 +2,12 @@
 
 Waits for a dependency before continuing. It's ment to be used in startup scripts like Docker's entrypoint.
 
+## Installing
+
+```
+pip install wait-for-dep
+```
+
 ## Usage
 
 ```
