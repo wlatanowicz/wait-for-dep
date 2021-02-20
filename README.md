@@ -25,7 +25,7 @@ wait-for-dep https://my-server/healthz/ psql://user@db-host/db-name
 
 ## HTTP(s)
 
-HTTP and HTTPS are available by default. Response with any HTTP code is accepted as valid.
+HTTP and HTTPS are available by default. Follows redirects; only response with HTTP code 2XX is accepted as valid.
 
 ### Accepted URL schemas
 * http://
