@@ -5,9 +5,14 @@ services:
       context: .
     environment:
       PYTHONUNBUFFERED: 1
+    volumes:
+      # attach docker socket to test unix sockets
+      - /var/run/docker.sock:/var/run/docker.sock
     command:
       - https://www.google.com
       - http://nginx
+      - tcp://nginx:80
+      - unix:///var/run/docker.sock
       - psql://admin:example@postgres/db
       - mysql://admin:example@mysql/db
       - memcached://memcached/

@@ -151,3 +151,27 @@ wait-for-dep kafka://kafka-first-host/,kafka://kafka-second-host/
 ```
 
 
+## TCP
+
+Plain TCP is available by default. Service port is required.
+
+### Accepted URL schemas
+* tcp://
+
+### Example
+```
+wait-for-dep tcp://my-server:7624
+```
+
+
+## Unix
+
+Unix sockets are available by default.
+
+### Accepted URL schemas
+* unix://
+
+### Example
+```
+wait-for-dep unix:///var/run/docker.sock
+```
