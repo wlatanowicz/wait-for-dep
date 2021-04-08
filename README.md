@@ -111,6 +111,25 @@ wait-for-dep memcached://memcached-host/
 ```
 
 
+## MongoDB
+
+MongoDB has to accept connection.
+
+### Installation
+```
+pip install wait-for-dep[mongodb]
+```
+
+### Accepted URL schemas
+* mongodb://
+* mongo://
+
+### Example
+```
+wait-for-dep mongodb://admin:password@db-host/db_name
+```
+
+
 ## RabbitMQ
 
 RabbitMQ has to accept connection to given vhost. You can use optional querystring params `require_queue` and `require_exchange` to additionaly check if particular queue or exchange exists (check will fail otherwise).

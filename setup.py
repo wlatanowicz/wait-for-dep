@@ -10,6 +10,7 @@ BUNDLES = (
     "rabbitmq",
     "redis",
     "websockets",
+    "mongodb",
 )
 
 # -*- Installation Requires -*-
@@ -58,7 +59,7 @@ setup(
             "wait-for-dep = wait_for_dep.wait_for_dep:main",
         ],
     },
-    version="0.2.1",
+    version="0.3.0",
     description="Waits for dependencies before running the app",
     url="http://github.com/wlatanowicz/wait-for-dep",
     author="Wiktor Latanowicz",

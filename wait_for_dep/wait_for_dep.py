@@ -21,9 +21,13 @@ class WaitForDep:
             check_module = importlib.import_module(module_name)
             check = check_module.check
         except ImportError:
-            raise ValueError(
+            print(
                 "Unsupported scheme: {} in url: {}".format(scheme, url_no_password)
             )
+            print("Using TCP for url: {}".format(url_no_password))
+            module_name = f"wait_for_dep.checks.tcp"
+            check_module = importlib.import_module(module_name)
+            check = check_module.check
 
         i = 0
         while True:

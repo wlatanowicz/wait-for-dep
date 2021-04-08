@@ -19,6 +19,7 @@ services:
       - amqp://admin:example@rabbitmq/vhost
       - kafka://kafka1:19092/,kafka://kafka2:19092/
       - redis://redis/5
+      - mongodb://root:password@mongo/db
 
   nginx:
     image: nginx:1.19
@@ -50,6 +51,12 @@ services:
   
   redis:
     image: redis:3.0
+
+  mongo:
+    image: mongo:3.6.21
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
 
   zookeeper: # for kafka
     image: zookeeper:3.4.9
