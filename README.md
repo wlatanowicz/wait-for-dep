@@ -122,7 +122,6 @@ pip install wait-for-dep[mongodb]
 
 ### Accepted URL schemas
 * mongodb://
-* mongo://
 
 ### Example
 ```
