@@ -3,6 +3,7 @@ import sys
 import time
 import re
 from urllib.parse import urlparse
+import argparse
 
 scheme_type = r"[a-z0-9]+"
 
@@ -62,11 +63,18 @@ class WaitForDep:
 
 def main():
     w = WaitForDep()
-    args = sys.argv
-    args.pop(0)
-
-    for url in args:
-        w.wait(url)
+    
+    
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('urls', metavar='N', type=str, nargs='+',
+                        help='space seperated list of urls to check')
+    
+    args = parser.parse_args()
+    urls = args.urls
+    
+    for url in urls:
+        if not url == "":
+            w.wait(url)
 
 
 if __name__ == "__main__":
