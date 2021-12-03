@@ -59,7 +59,7 @@ setup(
             "wait-for-dep = wait_for_dep.wait_for_dep:main",
         ],
     },
-    version="0.3.2",
+    version="0.3.2.1",
     description="Waits for dependencies before running the app",
     url="http://github.com/wlatanowicz/wait-for-dep",
     author="Wiktor Latanowicz",

@@ -118,14 +118,17 @@ MongoDB has to accept connection.
 ### Installation
 ```
 pip install wait-for-dep[mongodb]
+pip install wait-for-dep[mongodb_srv]
 ```
 
 ### Accepted URL schemas
 * mongodb://
+* mongodb+srv:// #Requires mongodb_srv bundle
 
 ### Example
 ```
 wait-for-dep mongodb://admin:password@db-host/db_name
+wait-for-dep mongodb+srv://admin:password@db-host/db_name
 ```
 
 
