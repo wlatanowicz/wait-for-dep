@@ -1,4 +1,5 @@
 from pathlib import Path
+from os import path
 
 from setuptools import find_packages, setup
 
@@ -6,6 +7,7 @@ BUNDLES = (
     "kafka",
     "memcached",
     "mysql",
+    "psycopg3",
     "postgres",
     "rabbitmq",
     "redis",
@@ -48,8 +50,13 @@ def extras_require():
     return {x: extras(x + ".txt") for x in BUNDLES}
 
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+def get_long_description():
+    with open(path.join(path.dirname(__file__), "README.md"), "r", encoding="utf-8") as fh:
+        return fh.read()
+
+def get_version():
+    with open(path.join(path.dirname(__file__), "wait_for_dep", "VERSION"), "r", encoding="utf-8") as f:
+        return f.read().strip()
 
 
 setup(
@@ -59,13 +66,13 @@ setup(
             "wait-for-dep = wait_for_dep.wait_for_dep:main",
         ],
     },
-    version="0.4.1",
+    version=get_version(),
     description="Waits for dependencies before running the app",
     url="http://github.com/wlatanowicz/wait-for-dep",
     author="Wiktor Latanowicz",
     author_email="wait-for-dep@wiktor.latanowicz.com",
     license="MIT",
-    long_description=long_description,
+    long_description=get_long_description(),
     long_description_content_type="text/markdown",
     packages=find_packages(
         exclude=[
